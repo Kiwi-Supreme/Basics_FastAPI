@@ -1,15 +1,13 @@
 from fastapi import FastAPI
-from typing import Optional
-from pydantic import BaseModel
-import uvicorn
 
 app = FastAPI()
-
 
 #Path paremeters
 @app.get('/')
 def index():
     return {'data' : {'blog list'}}
+
+#FastAPI reads code line by line that is why, we have put '/unpublished' before '/{id}' 
 
 @app.get('/blog/unpublished')
 def unpublished():
